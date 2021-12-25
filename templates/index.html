@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Campus Placement Prediction</h1>
+    <div class="login">
+        
+    
+         <!-- Main Input For Receiving Query to our ML -->
+        <form action="{{ url_for('predict')}}" method="post">
+            <input type="number" step="any" name="ssc_score" placeholder="SSC Score" required="required" >
+            <input type="number" step="any" name="hsc_score" placeholder="HSC Score" required="required" >
+            <input type="number" step="any" name="degree_score" placeholder="Degree Score" required="required" >
+            <input type="number" step="any" name="Work_Experience" placeholder="Work Experience">
+            <input type="number" step="any" name="etest_score" placeholder="etest Score" required="required" >
+            <input type="number" step="any" name="Specialisation" placeholder="Specialisation">
+            <input type="number" step="any" name="mba_p" placeholder="MBA percentage" required="required">
+            <label for="stream">Choose HSC stream : </label>
+            <select id="stream" name="stream">
+            <option value="Science" id=1>Science</option>
+            <option value="Commerce" id=2>Commerce</option>
+            <option value="Arts" id=3>Arts</option>
+            </select><br>
+
+            
+
+            <label for="course">Choose Degree Course : </label>
+            <select id="course" name="course">
+            <option value="Sci&Tech" id=1>Sci&Tech</option>
+            <option value="Comm&Mgmt" id=2>Comm&Mgmt</option>
+            <option value="Others" id=3>Others</option>
+            </select>
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+    
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+
+
+        </form>
+    
+       <br>
+       <br>
+       {{Prediction}}
+    
+     </div>
+    
+</body>
+</html>

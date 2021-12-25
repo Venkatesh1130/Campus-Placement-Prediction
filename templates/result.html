@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Your Placement Status</h1>
+    {% if prediction==1 %}
+    <span id="p1">Congratulations!! You have a chance to get Placed</span>
+    {%else%}
+    <span id="p2">You Need To work hard,All the Best</span>
+    {%endif%}
+</body>
+</html>
